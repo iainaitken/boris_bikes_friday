@@ -16,7 +16,7 @@ class DockingStation
 
 	def release_bike
     raise "No bikes avaliable" if dock_empty?
-		raise "Bike is broken" if @bike_list[-1].broken == true
+		raise "Bike is broken" if @bike_list[-1].working? == false
 	  bike_list.pop
 	end
 

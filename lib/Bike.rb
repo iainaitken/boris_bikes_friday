@@ -7,5 +7,6 @@ class Bike
     @broken = true
   end
   def working?
+    @broken == true ? false : true
   end
 end
