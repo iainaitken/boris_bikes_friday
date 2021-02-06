@@ -18,4 +18,22 @@ describe Van do
       expect { van.dropoff }.to change {van.bikes.length }.from(1).to(0)
     end
   end
+
+  describe '#deliver' do
+
+
+    it 'van can deliver bike to garage' do
+      bike = double("bike")
+      garage = double("garage", :receive => "bike received")
+      van.pickup(bike)
+      expect  { van.deliver(garage) }.to change { van.bikes.length }.from(1).to(0)
+    end
+
+    it 'garage receives bike when van delivers it' do
+      bike = double("bike")
+      garage = double("garage", :receive => "bike received")
+      van.pickup(bike)
+      expect(van.deliver(garage)).to eq("bike received")
+    end
+  end
 end

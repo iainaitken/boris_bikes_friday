@@ -1,3 +1,5 @@
+require 'garage'
+
 class Van
   attr_reader :bikes
 
@@ -11,5 +13,10 @@ class Van
 
   def dropoff
     @bikes.pop
+  end
+
+  def deliver(garage)
+    bike = @bikes.pop
+    garage.receive(bike)
   end
 end
