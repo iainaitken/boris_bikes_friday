@@ -21,7 +21,6 @@ describe Van do
 
   describe '#deliver' do
 
-
     it 'van can deliver bike to garage' do
       bike = double("bike")
       garage = double("garage", :receive => "bike received")
