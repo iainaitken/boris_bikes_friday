@@ -8,4 +8,8 @@ class Van
   def pickup(bike)
     @bikes.push(bike)
   end
+
+  def dropoff
+    @bikes.pop
+  end
 end

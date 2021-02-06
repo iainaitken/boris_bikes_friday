@@ -11,4 +11,11 @@ describe Van do
     end
   end
 
+  describe '#dropoff' do
+    it 'releases a bike from the van' do
+      bike = double("bike")
+      van.pickup(bike)
+      expect { van.dropoff }.to change {van.bikes.length }.from(1).to(0)
+    end
+  end
 end
